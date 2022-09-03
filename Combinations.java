@@ -36,7 +36,7 @@ public class Combinations {
         HVMN2 = 4;
         HVMN3 = 4;
         HVMAX = 24;
-        PMAXM = Stream.of(N1, N2, N3).collect(Collectors.summingInt(a -> a)) / NM + 1;
+        PMAXM = (N1 + N2 + N3) / NM + 1;
         avg = (N1 * HVMN1 + N2 * HVMN2 + N3 * HVMN3) / (double) NM;
         MAXM = avg.intValue() - avg.intValue() % Stream.of(HVMN1, HVMN2, HVMN3).collect(Collectors.maxBy(Comparator.naturalOrder())).get() +
                 Stream.of(HVMN1, HVMN2, HVMN3).collect(Collectors.maxBy(Comparator.naturalOrder())).get();
